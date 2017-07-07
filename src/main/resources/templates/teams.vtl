@@ -1,0 +1,10 @@
+<!--teams.vtl-->
+<h1>All teams</h1>
+<h4>Imagine how much hacking you can do now!</h4>
+<ul>
+  #foreach ($team in $teams)
+    <li><a href="/teams/$team.getId()">$team.getName()</a></li>
+  #end
+</ul>
+<a href="/teams/new">Add New Team</a>
+<!--teams.vtl-->
