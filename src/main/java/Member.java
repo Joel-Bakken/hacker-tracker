@@ -6,6 +6,8 @@ public class Member {
   private String mDescription;
   private boolean mCompleted;
   private LocalDateTime mCreatedAt;
+  private static List<Member> instances = new ArrayList<Member>();
+  private int mId;
 
   public Member(String description) {
     mDescription = description;
