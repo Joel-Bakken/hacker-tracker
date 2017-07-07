@@ -15,4 +15,20 @@ public class TeamTest {
     assertEquals("GUI", testTeam.getName());
   }
 
+  @Test
+  public void all_returnsAllInstancesOfTeam_true() {
+    Team firstTeam = new Team("GUI");
+    Team secondTeam = new Team("Graphics");
+    assertEquals(true, Team.all().contains(firstTeam));
+    assertEquals(true, Team.all().contains(secondTeam));
+  }
+
+  @Test
+  public void clear_emptiesAllTeamsFromList_0() {
+    Team testTeam = new Team("GUI");
+    Team.clear();
+    assertEquals(Team.all().size(), 0);
+  }
+
+  
 }
