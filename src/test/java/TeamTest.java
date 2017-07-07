@@ -30,5 +30,19 @@ public class TeamTest {
     assertEquals(Team.all().size(), 0);
   }
 
-  
+  @Test
+  public void getId_teamsInstantiateWithAnId_1() {
+    Team.clear();
+    Team testTeam = new Team("GUI");
+    assertEquals(1, testTeam.getId());
+  }
+
+  @Test
+  public void find_returnsTeamWithSameId_secondTeam() {
+    Team.clear();
+    Team firstTeam = new Team("GUI");
+    Team secondTeam = new Team("Graphics");
+    assertEquals(Team.find(secondTeam.getId()), secondTeam);
+  }
+
 }
