@@ -15,4 +15,18 @@ public class MemberTest {
     Member myMember = new Member("Joel Bakken");
     assertEquals("Joel Bakken", myMember.getDescription());
   }
+
+  @Test
+  public void isCompleted_isFalseAfterInstantiation_false() {
+    Member myMember = new Member("Joel Bakken");
+    assertEquals(false, myMember.isCompleted());
+  }
+
+  @Test
+  public void getCreatedAt_instantiatesWithCurrentTime_today() {
+    Member myMember = new Member("Joel Bakken");
+    assertEquals(LocalDateTime.now().getDayOfWeek(), myMember.getCreatedAt().getDayOfWeek());
+  }
+
+  
 }
