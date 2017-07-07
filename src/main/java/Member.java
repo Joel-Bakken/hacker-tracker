@@ -11,8 +11,8 @@ public class Member {
     mDescription = description;
     mCompleted = false;
     mCreatedAt = LocalDateTime.now();
-
-
+    instances.add(this);
+    mId = instances.size();
   }
 
   public String getDescription() {
@@ -27,5 +27,20 @@ public class Member {
     return mCreatedAt;
   }
 
+  public static List<Member> all()  {
+    return instances;
+  }
+
+  public static void clear()  {
+    instances.clear();
+  }
+
+  public int getId()  {
+    return mId;
+  }
+
+  public static Member find(int id) {
+    return instances.get(id - 1);
+  }
 
 }
