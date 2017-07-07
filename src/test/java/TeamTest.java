@@ -45,4 +45,19 @@ public class TeamTest {
     assertEquals(Team.find(secondTeam.getId()), secondTeam);
   }
 
+  @Test
+  public void getMembers_initiallyReturnsEmptyList_ArrayList() {
+    Team.clear();
+    Team testTeam = new Team("GUI");
+    assertEquals(0, testTeam.getMembers().size());
+  }
+
+  @Test
+  public void addMember_addsMemberToList_true() {
+    Team testTeam = new Team("GUI");
+    Member testMember = new Member("Joel Bakken");
+    testTeam.addMember(testMember);
+    assertTrue(testTeam.getMembers().contains(testMember));
+  }
+
 }
