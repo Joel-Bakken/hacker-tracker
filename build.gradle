@@ -3,6 +3,7 @@ apply plugin: 'application'
 
 archivesBaseName = "hacker-tracker"
 version = '1.0'
+applicationName = "hacker-tracker"
 mainClassName = "App"
 
 repositories {
